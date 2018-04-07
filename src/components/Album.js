@@ -27,11 +27,33 @@ class Album extends Component {
         </section>
         <table id="song-list">
           <colgroup>
+            <col id="song-play" />
+            <col id="song-pause" />
             <col id="song-number-column" />
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Number:</th>
+              <th>Title:</th>
+              <th>Duration:</th>
+            </tr>
+            {
+              this.state.album.songs.map( (song, index) =>
+              <tr>
+                <td><i class="icon ion-ios-play"></i></td>
+                <td><i class="icon ion-ios-pause"></i></td>
+                <td>{index + 1}</td>
+                <td>{song.title}</td>
+                <td>{song.duration} seconds</td>
+                //{Math.floor(song.duration / 60)}:{parseInt(song.duration - (60 * Math.floor(song.duration / 60)))}
+              </tr>
+              )
+            }
+
           </tbody>
         </table>
       </section>
