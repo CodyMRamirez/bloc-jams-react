@@ -10,8 +10,38 @@ class Album extends Component {
     });
 
     this.state = {
-      album: album
+      album: album,
+      currentSong: album.songs[0],
+      isPlaying: false
     };
+
+    this.audioElement = document.createElement('audio');
+    this.audioElement.src = album.songs[0].audioSrc;
+  }
+
+  play() {
+    this.audioElement.play();
+    this.setState({ isPlaying: true });
+  }
+
+  pause() {
+    this.audioElement.pause();
+    this.setState({ isPlaying: false });
+  }
+
+  setSong(song) {
+    this.audioElement.src = song.audioSrc;
+    this.setState({ currentSong: song });
+  }
+
+  handleSongClick(song) {
+    const isSameSong = this.state.currentSong === song;
+    if (this.state.isPlaying && isSameSong) {
+      this.pause();
+    } else {
+      if (!isSameSong) { this.setSong(song); }
+      this.play();
+    }
   }
 
   render() {
@@ -27,8 +57,6 @@ class Album extends Component {
         </section>
         <table id="song-list">
           <colgroup>
-            <col id="song-play" />
-            <col id="song-pause" />
             <col id="song-number-column" />
             <col id="song-title-column" />
             <col id="song-duration-column" />
@@ -43,12 +71,16 @@ class Album extends Component {
             </tr>
             {
               this.state.album.songs.map( (song, index) =>
-              <tr>
-                <td><i class="icon ion-ios-play"></i></td>
-                <td><i class="icon ion-ios-pause"></i></td>
-                <td>{index + 1}</td>
-                <td>{song.title}</td>
-                <td>{song.duration} seconds</td>
+              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+                <td className="song-actions">
+                  <button>
+                    <span className="song-number">{index + 1}</span>
+                    <span className="ion-play"></span>
+                    <span className="ion-pause"></span>
+                  </button>
+                </td>
+                <td className="song-title">{song.title}</td>
+                <td className="song-duration">{song.duration} seconds</td>
                 //{Math.floor(song.duration / 60)}:{parseInt(song.duration - (60 * Math.floor(song.duration / 60)))}
               </tr>
               )
