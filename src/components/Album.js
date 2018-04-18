@@ -65,7 +65,7 @@ class Album extends Component {
     return (
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover}/>
+          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
@@ -98,7 +98,6 @@ class Album extends Component {
                 </td>
                 <td className="song-title">{song.title}</td>
                 <td className="song-duration">{song.duration} seconds</td>
-                //{Math.floor(song.duration / 60)}:{parseInt(song.duration - (60 * Math.floor(song.duration / 60)))}
               </tr>
               )
             }
