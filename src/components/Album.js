@@ -125,7 +125,6 @@ class Album extends Component {
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
-            <div id="test"></div>
           </div>
         </section>
         <table id="song-list">
