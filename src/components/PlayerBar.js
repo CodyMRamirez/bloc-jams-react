@@ -16,7 +16,7 @@ class PlayerBar extends Component {
           </button>
         </section>
         <section id="time-control">
-          <div className="current-time">{this.props.currentTime}</div>
+          <div className="current-time">{this.props.currentFormattedTime}</div>
           <input
             type="range"
             className="seek-bar"
@@ -26,11 +26,23 @@ class PlayerBar extends Component {
             step="0.01"
             onChange={this.props.handleTimeChange}
           />
-          <div className="total-time">{this.props.duration}</div>
+          <div className="total-time">{this.props.formattedDuration}</div>
         </section>
         <section id="volume-control">
           <div className="icon ion-volume-low"></div>
+<<<<<<< HEAD
           <input type="range" className="seek-bar" defaultValue="80" />
+=======
+          <input
+            type="range"
+            className="seek-bar"
+            value={this.props.volume}
+            max="1"
+            min="0"
+            step="0.01"
+            onChange={this.props.handleVolumeChange}
+          />
+>>>>>>> assignment-9-BJRPlayerBarRangeInputs
           <div className="icon ion-volume-high"></div>
         </section>
       </section>
