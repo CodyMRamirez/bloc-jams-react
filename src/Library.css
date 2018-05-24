@@ -1,0 +1,45 @@
+body {
+  width: 100vw;
+}
+
+.library {
+  text-align: center;
+  width: 70vw;
+  min-width: 750px;
+  padding-top: 130px;
+  margin: auto;
+}
+
+#album {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border: solid 2px #ACACAC;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  vertical-align: top;
+  background-color: rgba(37, 153, 149, 0.6);
+}
+
+#album:hover {
+  background-color: rgba(37, 153, 149, 0.9);
+}
+
+img {
+  border-radius: 10px;
+}
+
+#all-song-information {
+  font-size: 18px;
+  margin-left: 100px;
+  width: 400px;
+}
+
+.song-information {
+  margin-left: 20px;
+  text-align: left;
+  padding: 5px 0 0;
+  font-family: 'Heebo', sans-serif;
+}

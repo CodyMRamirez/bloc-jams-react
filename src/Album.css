@@ -1,0 +1,28 @@
+
+
+.album {
+  padding: 150px 0;
+  text-align: center;
+  color: white;
+  width: 70vw;
+  min-width: 750px;
+  margin: auto;
+  font-family: 'Heebo', sans-serif;
+  height: 70vh;
+}
+
+.song {
+  padding-top: -10px;
+  font-size: 20px;
+}
+
+table {
+  position: relative;
+  right: 100px;
+  width: 450px;
+  border-spacing: 0;
+}
+
+td, th {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+}

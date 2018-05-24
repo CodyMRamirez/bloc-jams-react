@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import './../PlayerBar.css';
 
 class PlayerBar extends Component {
   render() {
     return(
       <section className="player-bar">
         <section id="buttons">
-          <button id="previous" onClick={this.props.handlePrevClick}>
-            <span className="ion-skip-backward"></span>
-          </button>
-          <button id="play-pause" onClick={this.props.handleSongClick}>
-            <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
-          </button>
-          <button id="next" onClick={this.props.handleNextClick}>
-            <span className="ion-skip-forward"></span>
-          </button>
+          <span id="previous" onClick={this.props.handlePrevClick}>
+            <i className="ion-skip-backward"></i>
+          </span>
+          <span id="play-pause" onClick={this.props.handleSongClick}>
+            <i className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></i>
+          </span>
+          <span id="next" onClick={this.props.handleNextClick}>
+            <i className="ion-skip-forward"></i>
+          </span>
         </section>
         <section id="time-control">
           <div className="current-time">{this.props.currentFormattedTime}</div>

@@ -1,0 +1,56 @@
+
+.ion-volume-low {
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 3px;
+}
+
+.ion-volume-high {
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+.player-bar {
+  position: relative;
+  top: -230px;
+}
+
+.icon, i {
+  margin-right: 15px;
+  font-size:32px;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 500px;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.seek-bar:hover {
+  opacity: 1;
+}
+
+#volume-control > .seek-bar {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 300px;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 20px;
+    background: #87E9E9;
+    cursor: pointer;
+}
