@@ -4,7 +4,7 @@
   padding: 150px 0;
   text-align: center;
   color: white;
-  width: 70vw;
+  max-width: 70vw;
   min-width: 750px;
   margin: auto;
   font-family: 'Heebo', sans-serif;
@@ -18,9 +18,11 @@
 
 table {
   position: relative;
-  right: 100px;
+  top: 300px;
   width: 450px;
   border-spacing: 0;
+  margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 td, th {
